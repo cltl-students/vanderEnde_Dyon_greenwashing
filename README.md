@@ -1,52 +1,47 @@
-# sample-thesis-project
-This repository is an example for the structure and content that a CLTL thesis project may have. 
+# Text Mining for Sustainability: Detecting Corporate Greenwashing with The Sustainable Development Goals
 
-# Overview
-This repository assumes a Python project, with an Open License (MIT style). If any of these aspects are different from your project please make sure to change those accordingly.
-Please feel free to clone/fork this repository and use it as a template for your thesis.
+## [scripts](https://github.com/dyonende/SDG/tree/master/scripts)
+The following scripts were used for my thesis.
+There were run in order as listed below as they require the output of the previous step.
+The PDFs are not stored on this repository but can be found on the websites of the companies.
 
-# Project structure
+1. [pdf_extractor.py](https://github.com/dyonende/SDG/blob/master/scripts/pdf_extractor.py)
+Extract paragraphs of text from PDF files
 
-```
-thesis-project
-└───data
-│       │   sample_data.csv 
-└───results
-│       │   sample_results.png 
-└───src
-│   └───utils
-│       │   plotting.py
-│   │   main.py
-│   .gitignore
-│   LICENSE
-│   README.md
-│   requirements.tx
-```
+2. [gn_links.py](https://github.com/dyonende/SDG/blob/master/scripts/gn_links.py)
+Collect all article urls from a Google News page.
 
-# To Do
-Once you start, please go through the following steps to tailor this template to your project
+3. [article_scraper.py](https://github.com/dyonende/SDG/blob/master/scripts/article_scraper.py)
+Scrape paragraphs of online news articles from a list of links
 
-## Thesis report
-You may decide to upload your report here directly, or to simply add a reference to where the report is hosted (e.g. Overleaf)
-- [ ] Add a reference to the thesis report
+4. [filter_data.py](https://github.com/dyonende/SDG/blob/master/scripts/filter_data.py)
+Only keep texts that are at least 20 tokens
 
-## Data 
-To ensure reproducibility, Yu need to provide the data your project uses.
-- [ ] Add your data in the data folder
+5. [aurora.py](https://github.com/dyonende/SDG/blob/master/scripts/aurora.py)
+Implementation of The Aurora Universities Network SDG classifier.
+Requires queries.py to work. This classifier drops the windowing constrains from the original classifier.
 
-Sometimes, sharing sharing data is not straightforward. For example, there may be restrictions regarding with whom or how you can share the data you have. Some other times, the data you are using is open and easily accessible from other sites, in which case you might want to point directly to the original source. Either way, if this is the case for you please 
-- [ ] Add the data folder to ``.gitignore`` in order to avoid commiting these files to Github. For this you can simply uncomment the last line in the ``.gitignore`` file  
-```
-# Tailored ignored files
-data/*
-```
-- [ ] Make sure to add a ``README.md`` file inside the data folder, where you explain in detail how to obtain and structure the data
+6. [osdg.py](https://github.com/dyonende/SDG/blob/master/scripts/osdg.py)
+Label text with OSDG classifier. Requires that the OSDG docker container is running.
 
-## README
-- [ ] Add instructions on how to set up the project, how to run your code and what to expect as an output.
+7. [combine_columns.py](https://github.com/dyonende/SDG/blob/master/scripts/combine_columns.py)
+Combines the output of aurora and OSDG from two columns into an extra column.
 
+8. [sentiment.py](https://github.com/dyonende/SDG/blob/master/scripts/sentiment.py)
+Add a column with a senitment score from VADER.
 
+## [links](https://github.com/dyonende/SDG/tree/master/links)
+This folder contains files with all the links to news articles that were used for the research.
 
+## [classifier evaluation](https://github.com/dyonende/SDG/tree/master/classifier%20evaluation)
 
+- [Annotation_Guidelines.pdf](https://github.com/dyonende/SDG/blob/master/classifier%20evaluation/Annotation_Guidelines.pdf)
+The annotation guidelines that were used for the evaluation task.
+- [corpus.csv](https://github.com/dyonende/SDG/blob/master/classifier%20evaluation/corpus.csv)
+The questions from the evaluation with gold labels.
 
+## [csv](https://github.com/dyonende/SDG/tree/master/csv)
+This folder contains all the data that was used for the research
 
+## [html](https://github.com/dyonende/SDG/tree/master/html)
+This folder contains the saved HTML search results from Google News that were used for the research
