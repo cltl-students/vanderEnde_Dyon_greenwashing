@@ -1,4 +1,4 @@
-# Text Mining for Sustainability: Detecting Corporate Greenwashing with The Sustainable Development Goals
+# [Text Mining for Sustainability: Detecting Corporate Greenwashing with The Sustainable Development Goals](https://github.com/cltl-students/vanderEnde_Dyon_greenwashing/blob/master/SDG_Thesis.pdf)
 
 ## [scripts](https://github.com/dyonende/SDG/tree/master/scripts)
 The following scripts were used for my thesis.
